@@ -52,7 +52,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with: 
         name: tfplan
-        path: tfplan.out
+        path: tfplan
 
   terraform-apply:
     name: 'Terraform Apply'
@@ -75,7 +75,7 @@ jobs:
     - name: Download Terraform Plan
       uses: actions/download-artifact@v2
       with:
-        name: tfplan -var-file=values.tfvars
+        name: tfplan
         path: .
     
     - name: Terraform Apply
