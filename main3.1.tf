@@ -5,6 +5,13 @@ terraform {
       version = "3.0.0"
     }
   }
+
+  backend "azurerm" {
+    resource_group_name = "StorageGroup"
+    storage_account_name = "taskboardstoragepetya"
+    container_name = "taskboardcontainer"
+    key = "terraform.tfstate"
+  }
 }
 
 provider "azurerm" {
